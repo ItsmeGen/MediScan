@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {  
   Bell, 
   Camera, 
@@ -20,8 +20,17 @@ import QuickAction from './props/QuickAction';
 import ActivityItem from './props/ActivityItem';
 import SystemStatus from './props/SystemStatus';
 
+interface userInfoProps{
+  name:String;
+  role:String;
+}
+
 
 const MediScanDashboard: React.FC = () => {
+  const [user,setUser] =useState<userInfoProps>({
+    name:"Dr. Sarah Johnson",
+    role:"Nurse"
+  })
   return (
     <div className="dashboard">
       {/* Header */}
@@ -51,8 +60,8 @@ const MediScanDashboard: React.FC = () => {
                 <User />
               </div>
               <div className="user-info">
-                <p>Dr. Sarah Johnson</p>
-                <p className="user-badge">DOCTOR</p>
+                <p>{user.name}</p>
+                <p className="user-badge">{user.role}</p>
               </div>
             </div>
           </div>
@@ -88,7 +97,7 @@ const MediScanDashboard: React.FC = () => {
       {/* Main Content */}
       <main className="main-content">
         <div className="welcome-section">
-          <h2>Welcome back, Dr.!</h2>
+          <h2>Welcome back, {user.role}</h2>
           <p>Here's what's happening in your medical verification system today.</p>
         </div>
 

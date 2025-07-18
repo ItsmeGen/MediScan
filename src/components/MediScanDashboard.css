@@ -152,13 +152,13 @@
         .nav-button {
           display: flex;
           align-items: center;
-          padding: 1rem 0.75rem;
+          padding: 10px;
           font-size: 0.875rem;
-          font-weight: 500;
           border: none;
           background: none;
           cursor: pointer;
-          border-radius: 0.5rem 0.5rem 0 0;
+          border-radius:30px;
+          margin: 10px;
           transition: all 0.2s;
         }
 
@@ -174,11 +174,12 @@
         }
 
         .nav-button:not(.active) {
-          color: #64748b;
+          color: #1e293b;
+          font-weight: 400;
         }
 
         .nav-button:not(.active):hover {
-          color: #1e293b;
+          background-color: #3b82f680;
         }
 
         /* Main Content Styles */
@@ -202,8 +203,6 @@
         .welcome-section p {
           color: #64748b;
         }
-
-
 
         /* Responsive Design */
         @media (max-width: 768px) {
